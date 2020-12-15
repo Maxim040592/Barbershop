@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">№</th>
+      <th scope="col">Имя</th>
+      <th scope="col">Телефон</th>
+      <th scope="col">Барбер</th>
+      <th scope="col">Время записи</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% @table_users.each do |row|  %>
+      <tr>
+        <td><%= row['id'] %></td>
+        <td><%= row['Username'] %></td>
+        <td><%= row['Phone'] %></td>
+        <td><%= row['Barber'] %></td>
+        <td><%= row['DataStamp'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<form action="/admin" method="POST">
+  <button type="submit" class="btn btn-primary">Очисть БД</button>
+</form>

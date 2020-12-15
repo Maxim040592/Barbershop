@@ -1,0 +1,25 @@
+<h2> Записатья </h2>
+<form action="/visit" method="POST">
+  <div class="mb-3">
+  	 <label for="exampleInputEmail1" class="form-label">Выберите специалиста</label>
+    <select name="special_name" class="form-control">
+	  <% @table_barbers.each do |row|%>
+       <option <%= @specialname == row['name'] ? 'selected' : '' %>><%= row['name'] %></option>
+    <% end %>
+	</select>  
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ваше имя</label>
+    <input name="username" type="text" class="form-control" placeholder="Введите ваше имя" value="<%= @username %>">
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ваш телефон</label>
+    <input name="phonenumber" type="text" class="form-control" placeholder="Введите ваш телефон" value="<%= @phone %>">
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Дата записи</label>
+    <input name="datetime" type="text" class="form-control" placeholder="Введите дату и время записи" value="<%= @datetime %>">
+  </div>
+  <button type="submit" class="btn btn-primary">Записаться</button>
+</form>

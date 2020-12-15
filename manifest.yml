@@ -1,0 +1,12 @@
+---
+applications:
+- name: bootstrap
+  memory: 128M
+  instances: 1
+  url: bootstrap.${target-base}
+  path: .
+test:
+    adapter: sqlite3
+    database: db/test.sqlite3
+    pool: 50
+    timeout: 5000
